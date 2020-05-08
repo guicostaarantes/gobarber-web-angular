@@ -1,4 +1,4 @@
 export interface IAuthState {
-  name: string;
+  fullName: string;
   token: string;
 }

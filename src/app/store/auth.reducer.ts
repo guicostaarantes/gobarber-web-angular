@@ -2,8 +2,8 @@ import * as AuthActions from './auth.actions';
 import { IAuthState } from './auth.state';
 
 const initialState: IAuthState = {
-  name: 'Gui',
-  token: '123',
+  fullName: '',
+  token: '',
 };
 
 export function AuthReducer(
@@ -14,7 +14,7 @@ export function AuthReducer(
     case AuthActions.SIGN_IN:
       return action.payload;
     case AuthActions.SIGN_OUT:
-      return undefined;
+      return initialState;
     default:
       return state;
   }

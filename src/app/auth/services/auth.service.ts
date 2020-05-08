@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 import { IAuthState } from 'src/app/store/auth.state';
 import * as AuthActions from 'src/app/store/auth.actions';
@@ -27,6 +27,6 @@ export class AuthService {
         headers: { Authorization: `Bearer ${token}` },
       })
       .toPromise();
-    this.store.dispatch(new AuthActions.SignIn({ name: fullName, token }));
+    this.store.dispatch(new AuthActions.SignIn({ fullName, token }));
   }
 }
