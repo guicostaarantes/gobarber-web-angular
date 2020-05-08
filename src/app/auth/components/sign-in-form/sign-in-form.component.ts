@@ -1,10 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
-import { IAuthState } from '../../../store/auth.state';
-import * as AuthActions from '../../../store/auth.actions';
 
 @Component({
   selector: 'app-sign-in-form',
