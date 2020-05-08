@@ -1,0 +1,22 @@
+<form [formGroup]="signInForm" (ngSubmit)="submitSignInForm()">
+  <img class="logo" src="assets/logo.svg" alt="logo" />
+  <h1>Faça seu logon</h1>
+  <app-input
+    [formGroup]="signInForm"
+    name="email"
+    type="email"
+    placeholder="E-mail"
+  ></app-input>
+  <app-input
+    [formGroup]="signInForm"
+    name="password"
+    type="password"
+    placeholder="Senha"
+  ></app-input>
+  <app-button type="submit" label="Entrar"></app-button>
+  <a href="#" class="forgot-password">Esqueci minha senha</a>
+  <div class="sign-up">
+    <a routerLink="/sign-up" routerLinkActive="active">Criar nova conta</a>
+    <i-feather name="arrow-right"></i-feather>
+  </div>
+</form>
