@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { IAuthState } from 'src/app/store/auth.state';
 import * as AuthActions from 'src/app/store/auth.actions';
 import { environment } from '../../../environments/environment';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,7 @@ export class AuthService {
   apiBaseUrl = environment.apiBaseUrl;
   constructor(
     private http: HttpClient,
+    private router: Router,
     private store: Store<{ auth: IAuthState }>
   ) {}
 
@@ -28,5 +30,6 @@ export class AuthService {
       })
       .toPromise();
     this.store.dispatch(new AuthActions.SignIn({ fullName, token }));
+    this.router.navigate(['']);
   }
 }
